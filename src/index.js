@@ -73,6 +73,7 @@ client.on('message', msg => {
 
 client.on('ready', () => {
   console.log(`Conectando... ${client.user.tag}`);
+  // client.user.setActivity('VALORANT', { type: 'PLAYING'})
   client.user.setActivity('Amoug Us', { type: 'PLAYING'})
   // client.user.setActivity('Spotify', { type: 'LISTENING'})
 })
