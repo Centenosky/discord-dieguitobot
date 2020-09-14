@@ -24,7 +24,6 @@ client.on('message', msg => {
   const command = args.shift().toLowerCase();
   
   var mensajes = ["Hola", "Hellou", "Que ondaa", "Que pasaa"];
-  var games = ["Amoung Us", "VALORANT", "Fortnite"];
   var aleatorio = Math.floor(Math.random()*(mensajes.length));
 
   if (msg.channel.type === 'dm') {
@@ -75,6 +74,9 @@ client.on('message', msg => {
 })
 
 client.on('ready', () => {
+  var games = ["Amoung Us", "VALORANT", "Fortnite"];
+  var aleatorio = Math.floor(Math.random()*(mensajes.length));
+  
   console.log(`Conectando... ${client.user.tag}`);
   client.user.setActivity( games[aleatorio], { type: 'PLAYING'})
   // client.user.setActivity('Spotify', { type: 'LISTENING'})
