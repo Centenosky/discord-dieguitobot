@@ -5,6 +5,10 @@ const helpMessageEmbed = require('./utils/helpMessageEmbed')
 const creatorMessageEmbed = require('./utils/creatorMessageEmbed')
 const prefix = '!';
 
+var mensajes = ["Hola", "Hellou", "Que ondaa", "Que pasaa"];
+var aleatorio = Math.floor(Math.random()*(mensajes.length));
+var games = ["Amoung Us", "VALORANT", "Fortnite"];
+
 require('dotenv').config();
 
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
@@ -22,9 +26,6 @@ client.on('message', msg => {
 
   const args = msg.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
-  
-  var mensajes = ["Hola", "Hellou", "Que ondaa", "Que pasaa"];
-  var aleatorio = Math.floor(Math.random()*(mensajes.length));
 
   if (msg.channel.type === 'dm') {
     console.log('Enviaste un DM');
@@ -74,9 +75,6 @@ client.on('message', msg => {
 })
 
 client.on('ready', () => {
-  var games = ["Amoung Us", "VALORANT", "Fortnite"];
-  var aleatorio = Math.floor(Math.random()*(mensajes.length));
-  
   console.log(`Conectando... ${client.user.tag}`);
   client.user.setActivity( games[aleatorio], { type: 'PLAYING'})
   // client.user.setActivity('Spotify', { type: 'LISTENING'})
