@@ -34,7 +34,7 @@ client.on('message', msg => {
     msg.reply('Hola!');
     msg.react('👍🏼');
   }
-  if (msg.content.startsWith.toLocaleLowerCase() === 'hellou') {
+  if (msg.content.toLocaleLowerCase() === 'hellou') {
     msg.reply(mensajes[aleatorio]);
     msg.react('👍🏼');
   }
